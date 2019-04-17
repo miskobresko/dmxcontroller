@@ -1,1 +1,1 @@
-# dmxcontroller
+# DMX Controller
