@@ -14,7 +14,7 @@
             <!-- obsah panelu -->
         </aside>
 
-        <?php $data = array( 31, 63, 95, 127, 159, 191, 223, 255 ); ?>
+        <?php $data = array( 31, 63, 95, 127, 159, 191, 223, 255 ); // udaje ktore by sme inak tahali z databazy ?>
 
         <div class="sliders-container">
             <?php for ( $i = 0; $i < 8; $i++ ) : ?>
@@ -26,12 +26,12 @@
 
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript">
-            $( window ).on( "load change resize", function() {
-                var height = $( ".sliders-container" ).height();
-                $( ".slider" ).width( height - 100 );
+            $( window ).on( "load change resize", function() { // urobi funkciu ak na okno nacita, zmeni, zmeni velkost
+                var height = $( ".sliders-container" ).height(); // po nacitani okna si zoberie vysku elementu .sliders-container
+                $( ".slider" ).width( height - 100 ); // nastavy vysku sliderov o 100px menej ako ma vysku container
             });
 
-            $( ".slider" ).on( "input", function() {
+            $( ".slider" ).on( "input", function() { // zachytavame kazdu zmenu, takto to budeme odosielat na server
                 var id = $( this ).attr( "id" );
                 var value = 255 - $( this ).val();
                 console.log( id + ": " + value );
